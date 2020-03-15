@@ -1,0 +1,41 @@
+.content-navigation-mobile {
+	display: none;
+	position: fixed;
+	top: 0;
+	width: calc(100% - 2rem);
+	z-index: 3;
+	height: 100vh;
+	padding: 1rem;
+	background-color: $gray1;
+	color: $gray4;
+	overflow: auto;
+
+	& .navigation-mobile {
+		display: block;
+		width: 100%;
+		padding-bottom: 5rem;
+		
+		& li {
+			padding: 1rem 0;
+			color: $gray4;
+			@include border-box;
+		}
+	}
+}
+.navigation-mobile-open {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.content-navigation-p{
+}

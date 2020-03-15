@@ -1,0 +1,395 @@
+/* BOSS */
+@import 'reset.scss';
+
+@include calc;
+@include box-laterais;
+@include width;
+@include site-space;
+@include max;
+@include float;
+@include font-size;
+@include font-size-all;
+@include font-weight;
+@include pd-left;
+@include pd-right;
+@include pd;
+@include rotating;
+a[accesskey]:after, button[accesskey]:after, input[accesskey]:after,
+label[accesskey]:after, legend[accesskey]:after, textarea[accesskey]:after {
+    margin-left: 0.3em;
+    content: "[" attr(accesskey) "]";
+    }
+.stop-animation {
+	animation-iteration-count: 1 !important;
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.relative {
+	position: relative !important;
+}
+.absolute {
+	position: absolute !important;
+}
+.stop-scroll {
+	overflow: hidden;
+}
+.iframe{
+	background-color: #FFF;
+	border: none;
+	width: 100%;
+	min-height: 80vh;
+}
+
+.no-mg{
+	margin: 0;
+}
+
+.white{
+	color: #FFF !important;
+}
+
+.white-all *{
+	color: #FFF !important;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.text-center-all *{
+	text-align: center;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-justify{
+	text-align: justify;
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.block{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	@include border-box;
+}
+
+.align-top{
+	vertical-align: top !important;
+}
+
+.align-middle{
+	vertical-align: middle !important;
+}
+
+.align-bottom{
+	vertical-align: bottom !important;
+}
+
+.display-none{
+	display: none;
+}
+
+.display-table{
+	display: table;
+}
+.half-left{
+	margin-left: auto;
+	margin-right: 0;
+}
+.half-right{
+	display: table;
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.display-block{
+	display: block;
+}
+
+.inline-block{
+	display: inline-block;
+	vertical-align: top;
+	@include border-box;
+}
+
+.display-inline-table{
+	display: inline-table;
+}
+
+.margin-auto{
+	margin: auto;
+}
+
+.margin-right{
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.outline-none{
+	outline: none;
+}
+
+.hidden{
+	margin-top: -9999px !important;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 0;
+	position: absolute !important;
+	opacity: 0 !important;
+	overflow: auto;
+}
+
+.border-box{
+	@include border-box;
+}
+
+.no-select{
+	@include user-select(none);
+}
+
+.opacity{
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.animation{
+	color: default !important;
+	@include animation('all 0.25s, ease-in-out');
+	@include transition('all 0.25s ease-in-out');
+}
+
+.animation:hover{
+	color: #696969 !important;
+	@include animation('all 0.25s ease-in-out');
+	@include transition('all 0.25s ease-in-out');
+}
+
+.rotate-180{
+	@include rotate(180deg);
+}
+
+.clean-list, .clean-list ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.clean-list li, .clean-list ol{
+	list-style: none;
+	padding: 0;
+}
+
+.pdt-15{
+	padding: 15px 0;
+	@include border-box;
+}
+
+.equidistant{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: justify;
+	display: -ms-flexbox;
+	-ms-flex-pack: space-between;
+	-ms-flex-align: justify;
+}
+
+@media all and (min-width: 1281px){
+	.no-pc{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+	.pc-justify{
+		text-align: justify;
+	}
+}
+
+@media all and (min-width: 1024px) and (max-width: 1280px){
+	.no-pc{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+	.pc-justify{
+		text-align: justify;
+	}
+}
+
+@media all and (min-width: 768px) and (max-width: 1023px){
+	.block{
+		width: 100% !important;
+		padding: 5px 0 !important;
+	}
+	.pd-adjust{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.mobile-no-pd{
+		padding: 0 !important;
+	}
+	.reponsive-table{
+		clear: both !important;
+		float: left !important;
+		display: table !important;
+		width: 100% !important;
+		margin-bottom: 5px;
+	}
+	.no-mobile{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+
+	.equidistant, .equidistant-area{
+		width: 100%;
+		display: block;
+	}
+	.mobile-margin-auto{
+		margin: auto;
+	}
+	.mobile-margin-left{
+		margin-left: 0 !important;
+		margin-right: auto !important;
+	}
+
+	@include mobile-text-center;
+}
+
+@media all and (min-width: 521px) and (max-width: 767px){
+	.block{
+		width: 100% !important;
+		padding: 5px 0 !important;
+	}
+	.pd-adjust{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.mobile-no-pd{
+		padding: 0 !important;
+	}
+	.reponsive-table{
+		clear: both !important;
+		float: left !important;
+		display: table !important;
+		width: 100% !important;
+		margin-bottom: 5px;
+	}
+	.no-mobile{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+
+	.equidistant, .equidistant-area{
+		width: 100%;
+		display: block;
+	}
+	.mobile-margin-auto{
+		margin: auto;
+	}
+	.mobile-margin-left{
+		margin-left: 0 !important;
+		margin-right: auto !important;
+	}
+
+	@include mobile-text-center;
+}
+
+@media all and (min-width: 382px) and (max-width: 520px){
+	.block{
+		width: 100% !important;
+		padding: 5px 0 !important;
+	}
+	.pd-adjust{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.mobile-no-pd{
+		padding: 0 !important;
+	}
+	.reponsive-table{
+		clear: both !important;
+		float: left !important;
+		display: table !important;
+		width: 100% !important;
+		margin-bottom: 5px;
+	}
+	.no-mobile{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+
+	.equidistant, .equidistant-area{
+		width: 100%;
+		display: block;
+	}
+	.mobile-margin-auto{
+		margin: auto;
+	}
+	.mobile-margin-left{
+		margin-left: 0 !important;
+		margin-right: auto !important;
+	}
+
+	@include mobile-text-center;
+}
+
+@media all and (max-width: 381px){
+	.block{
+		width: 100% !important;
+		padding: 5px 0 !important;
+	}
+	.pd-adjust{
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.mobile-no-pd{
+		padding: 0 !important;
+	}
+	.reponsive-table{
+		clear: both !important;
+		float: left !important;
+		display: table !important;
+		width: 100% !important;
+		margin-bottom: 5px;
+	}
+	.no-mobile{
+		display: none !important;
+		position: absolute;
+		margin-left: -99999px;
+	}
+
+	.equidistant, .equidistant-area{
+		width: 100%;
+		display: block;
+	}
+	.mobile-margin-auto{
+		margin: auto;
+	}
+	.mobile-margin-left{
+		margin-left: 0 !important;
+		margin-right: auto !important;
+	}
+
+	@include mobile-text-center;
+}

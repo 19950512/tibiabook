@@ -1,0 +1,29 @@
+#push-loader{
+	position: fixed;
+	top: 0px;
+
+	background: -webkit-gradient(linear, left top, right top, from(#{$claro}), to(#{$escuro})) no-repeat;
+	background: -moz-linear-gradient(left, #{$claro}, #{$escuro});
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#{$claro}, EndColorStr=#{$escuro});
+
+	height: 3px;
+	display: table;
+	width: 0%;
+	z-index: 9999;
+	opacity: 0;
+
+	@include animation(all .25s alternate);
+	@include transition(all .25s ease-in-out);
+}
+.push-loader{
+	max-width: 5px;
+	width: 100%;
+
+	background: -webkit-gradient(linear, left top, right top, from($claro), to($escuro)) no-repeat;
+	background: -moz-linear-gradient(left, $claro, $escuro);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=$claro, EndColorStr=$escuro);
+
+	height: 3px;
+	position: absolute;
+	right: 0px;
+}

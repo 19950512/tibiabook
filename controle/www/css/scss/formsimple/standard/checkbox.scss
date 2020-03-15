@@ -1,0 +1,161 @@
+/* CHECKBOX */
+.formsimple-checkbox{
+	transform: translateX(0px);
+	transition: transform 0.15s ease;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	@include form-font();
+	height: #{$formsimple_inputHeight}px;
+	min-width: #{$formsimple_inputHeight}px;
+	margin: 2px 0px 2px 0px;
+	padding-left: #{$formsimple_inputPdLeft / 2}px;
+	padding-right: #{$formsimple_inputPdRight / 2}px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+.formsimple-checkbox input{
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+	width: 1px;
+	height: 1px;
+}
+.formsimple-checkbox label{
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	font-size: $inputTextSize;
+	color: $inputTextColor;
+	text-align: left;
+	line-height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+	height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+}
+.formsimple-checkbox label span{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: .5rem;
+	font-size: 0;
+	width: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2) - 6}px;
+	height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)  - 6}px;
+	border: #{$formsimple_inputBorderCheckbox}px solid #AAA;
+	border-radius: #{$formsimple_inputBorderRadiusCheckbox}px;
+	z-index: 1;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+.formsimple-checkbox input:checked + label{
+	font-weight: bold;
+}
+
+.formsimple-checkbox input + label span::before{
+	position: absolute;
+	width: inherit;
+	top: 50%;
+	left: 50%;
+	display: block;
+	text-align: center;
+	content: "\f00c" !important;
+	font-size: 0;
+	font-family: 'Objetiva Software Light' !important;
+	font-weight: normal;
+	opacity: 0;
+	transform: translateX(-50%) translateY(-50%);
+	animation-fill-mode: forwards;
+	transform-origin: center center;
+}
+.formsimple-checkbox input:checked + label span::before{
+	font-weight: normal;
+	animation: formsimple_checkbox_in 0.3s;
+	animation-fill-mode: forwards;
+	transform-origin: center center;
+
+}
+
+/* DISABLED */
+.formsimple-checkbox input:disabled + label{
+	cursor: default !important;
+	color: $gray4 !important;
+}
+.formsimple-checkbox input:disabled + label span{
+	border-color: $gray4 !important;
+}
+
+
+.formsimple-checkbox-min{
+
+//	height: #{($formsimple_inputHeightMin * 1.5)}px;
+
+	height: #{$formsimple_inputHeightMin}px !important;
+	margin: 2px 0 1px 0;
+	//width: #{$formsimple_inputHeightMin}px !important;
+	//line-height: #{$formsimple_inputHeightMin}px !important;
+	//
+	& label {
+		height: #{$formsimple_inputHeightMin}px !important;
+		line-height: #{$formsimple_inputHeightMin}px !important;
+		@include formsimple-font();
+		
+		& span {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	& input:checked + label span::before{
+		font-weight: normal;
+		animation: formsimple_checkbox_in_min 0.3s;
+		animation-fill-mode: forwards;
+		transform-origin: center center;
+	}
+}
+
+@keyframes formsimple_checkbox_in{
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 0rem;
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 1.5rem;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 1.1rem;
+	}
+}
+
+@keyframes formsimple_checkbox_in_min{
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 0rem;
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 1.1rem;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		font-size: 0.9rem;
+	}
+}

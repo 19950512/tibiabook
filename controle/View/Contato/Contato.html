@@ -1,0 +1,51 @@
+<section class="content content_v content_h content_m">
+	<div class="max40">
+		<h1>Contato</h1>
+		<div id="container_contato">
+			<h4 class="formulario-titulo">Nome completo</h4>
+			<input id="nome" class="formsimple-input width-100" type="text" name="nome" placeholder="Seu nome completo" />
+			<div class="site-space-1"></div>
+			<h4 class="formulario-titulo">E-mail</h4>
+			<input id="email" class="formsimple-input width-100" type="email" name="email" placeholder="Seu e-mail" />
+			<div class="site-space-1"></div>
+			<div class="block width-50 pd-right-min">
+				<h4 class="formulario-titulo">Telefone</h4>
+				<input id="telefone" class="formsimple-input width-100" type="tel" name="telefone" placeholder="Seu telefone" />
+			</div>
+			<div class="block width-50 pd-left-min">
+				<h4 class="formulario-titulo">Celular</h4>
+				<input id="celular" class="formsimple-input width-100" type="tel" name="celular" placeholder="Seu celular" />
+			</div>
+			<div class="site-space-1"></div>
+			<h4 class="formulario-titulo">Mensagem</h4>
+			<textarea id="mensagem" class="formsimple-textarea width-100" name="mensagem" placeholder="Deixe uma mensagem"></textarea>
+			<div class="site-space-1"></div>
+			<button type="button" onclick="contato(this);" class="b b-primary width-100">Enviar</button>
+		</div>
+		<p id="resposta"></p>
+	</div>
+</section>
+
+<script>
+	window.contato = async btn => {
+		
+		var contato = dev.ajax('/contato/enviar', {
+			nome: nome.value,
+			email: email.value,
+			telefone: telefone.value,
+			celular: celular.value,
+			mensagem: mensagem.value,
+			token: 'teste'
+		});
+
+		contato.then(res => {
+
+			(res.r == 'ok') ? container_contato.classList.add('hidden') : container_contato.classList.remove('hidden');
+
+			resposta.innerHTML = res.data;
+
+		}).catch(res => {
+			console.error("Ops, algo de errado não deu certo.", res);
+		});
+	};
+</script>

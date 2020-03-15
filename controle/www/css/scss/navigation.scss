@@ -1,0 +1,18 @@
+.content-navigation {
+	background: blue;
+	position: sticky;
+	top: 0;
+	margin: auto;
+	z-index: 3;
+
+	& .navigation {
+		display: block;
+		width: 100%;
+		margin: auto;
+		& li {
+			display: inline-block;
+			padding: 1rem;
+			@include border-box;
+		}
+	}
+}

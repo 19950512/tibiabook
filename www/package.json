@@ -1,0 +1,32 @@
+{
+  "name": "DevNux",
+  "version": "1.0.0",
+  "description": "DevNux",
+  "dominio": "dosamigosmetalurgica.local",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp dev --site",
+    "prod": "gulp prod --site"
+  },
+  "author": "Maydana",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-error": "^1.0.5",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^3.5.0-beta.1"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "yargs": "^15.1.0"
+  }
+}

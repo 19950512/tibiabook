@@ -1,0 +1,22 @@
+{
+	"controle.dosamigosmetalurgica.local":{
+		"dominio":"controle.dosamigosmetalurgica.local",
+		"nome":"Controle - Dos Amigos Metalurgica",
+		"namespace":"controle",
+		"status":1,
+		"path":"Sites",
+		"statics":"\/\/statics.controle.dosamigosmetalurgica.local",
+		"link": "http://controle.dosamigosmetalurgica.local:80/",
+		"www": "../controle/www/"
+	},
+	"dosamigosmetalurgica.local":{
+		"dominio":"dosamigosmetalurgica.local",
+		"nome":"Dos Amigos Metalurgica",
+		"namespace":"dosamigosmetalurgica",
+		"status":1,
+		"path":"Sites",
+		"statics":"\/\/statics.dosamigosmetalurgica.local",
+		"link": "http://dosamigosmetalurgica.local:80/",
+		"www": "../dosamigosmetalurgica/www/"
+	}
+}

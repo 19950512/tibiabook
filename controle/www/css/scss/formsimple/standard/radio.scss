@@ -1,0 +1,130 @@
+/* RADIO */
+.formsimple-radio{
+	transform: translateX(0px);
+	transition: transform 0.15s ease;
+	@include form-font();
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: #{$formsimple_inputHeight}px;
+	min-width: #{$formsimple_inputHeight}px;
+	margin: 2px 0px 2px 0px;
+	padding-left: #{$formsimple_inputPdLeft / 2}px;
+	padding-right: #{$formsimple_inputPdRight / 2}px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+.formsimple-radio input{
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+	width: 1px;
+	height: 1px;
+}
+.formsimple-radio label{
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	font-size: $inputTextSize;
+	color: $inputTextColor;
+	text-align: left;
+	line-height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+	height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+}
+.formsimple-radio label span{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+	width: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2) - 6}px;
+	height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2) - 6}px;
+	border: #{$formsimple_inputBorderCheckbox}px solid #AAA;
+	border-radius: 50%;
+	z-index: 1;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+.formsimple-radio input:checked + label{
+	font-weight: bold;
+}
+
+.formsimple-radio input + label span::before{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	content: "";
+	text-align: center;
+	border-radius: 50%;
+	width: 2px;
+	height: 2px;
+	background-color: #AAA;
+	opacity: 0;
+	transform: translateX(-50%) translateY(-50%) scale(0);
+	animation: formsimple_radio_out 0.3s;
+	animation-fill-mode: forwards;
+	transform-origin: center center;
+}
+.formsimple-radio input:checked + label span::before{
+	animation: formsimple_radio_in 0.3s;
+	animation-fill-mode: forwards;
+	transform-origin: center center;
+
+}
+
+/* DISABLED */
+.formsimple-radio input:disabled + label{
+	cursor: default !important;
+	color: $gray4 !important;
+}
+.formsimple-radio input:disabled + label span{
+	border-color: $gray4 !important;
+}
+
+@keyframes formsimple_radio_in{
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		width: 2px;
+		height: 2px;
+	}
+	50%{
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		width: #{($formsimple_inputHeight /  2) - 6}px;
+		height: #{($formsimple_inputHeight /  2) - 6}px;
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		width: #{($formsimple_inputHeight /  2.5) - 6}px;
+		height: #{($formsimple_inputHeight /  2.5) - 6}px;
+	}
+}
+@keyframes formsimple_radio_out{
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(-50%);
+		width: #{($formsimple_inputHeight /  2) - 6}px;
+		height: #{($formsimple_inputHeight /  2) - 6}px;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-50%);
+		width: 2px;
+		height: 2px;
+	}
+}

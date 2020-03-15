@@ -1,0 +1,129 @@
+.formsimple-selectmultiple{
+	display: inline-block;
+	vertical-align: middle;
+	outline: none;
+	min-width: 130px;
+	line-height: #{($formsimple_inputHeight - ($formsimple_inputBorder * 2))}px;
+	position: relative;
+	color: $gray1;
+	@include margin-padrao;
+
+	& select{
+		position: absolute;
+		visibility: hidden;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		z-index: 0;
+	}
+
+	& .label {
+		outline: none;
+		padding: 0px #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px 0px #{$formsimple_inputPdRight}px;
+		display: block;
+		width: 100%;
+		position: relative;
+		border: #{$formsimple_inputBorder}px solid $formsimple_inputBorderColor;
+		border-radius: var(--Border-radius);
+		background-color: rgba(0,0,0,0);
+		line-height: inherit;
+		@include user-select(none);
+		@include border-box;
+		@include formsimple-font;
+		
+		&:hover {
+			background-color: lighten($gray4, 10);
+			color: darken($gray1, 20);
+		}
+	}
+
+	& .component {
+		display: block;
+		overflow: hidden;
+		height: 0;
+		visibility: hidden;
+		width: calc(100% - 2px);
+		position: absolute;
+		top: #{($formsimple_inputHeight - ($formsimple_inputBorder * 2))}px;
+		left: 0;
+		z-index: 2;
+		border-top: none;
+		border-bottom: 1px solid $gray4;
+		border-left: 1px solid $gray4;
+		border-right: 1px solid $gray4;
+
+		& .items {
+			display: block;
+			width: 100%;
+			background-color: #ffffff;
+			max-height: 30vh;
+			text-align: left;
+			min-height: 3rem;
+			overflow: auto;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			@include border-box;
+
+			& .group{
+				padding: 1rem;
+				padding-bottom: 0;
+				font-weight: 400;
+				@include border-box;
+			}
+
+			& .group_itens{
+				padding: 1rem;
+				@include border-box;
+			}
+		}
+
+		& .botoes {
+			display: block;
+			width: 100%;
+			background-color: #ffffff;
+			height: 2.5rem;
+			border-top: 1px solid $gray4;
+
+			& .undo{
+				display: inline-block;
+				width: 50%;
+				vertical-align: top;
+			}
+
+			& .ok{
+				display: inline-block;
+				width: 50%;
+				vertical-align: top;
+			}
+
+			& button {
+				display: block;
+				margin: 0;
+				outline: none;
+				border: 0;
+				background-color: transparent;
+				color: $gray1;
+				height: inherit;
+			}
+		}
+	}
+}
+
+.active{
+
+	& .component{
+		overflow: auto;
+		height: auto;
+		visibility: visible;
+	}
+
+	& .label{
+		background-color: #fff;
+
+		&:hover {
+			background-color: #fff;
+			color: darken($gray1, 20);
+		}
+	}
+}

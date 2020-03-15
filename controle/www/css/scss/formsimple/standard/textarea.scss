@@ -1,0 +1,25 @@
+.formsimple-textarea {
+	outline: none;
+	width: 100%;
+	padding: #{$formsimple_inputPdLeft}rem;
+	min-height: #{$formsimple_inputHeight}rem;
+	min-width: #{$formsimple_inputHeight}rem;
+	background-color: $formsimple_inputBackgroundColor;
+	border: #{$formsimple_inputBorder}rem solid $formsimple_inputBorderColor;
+	border-radius: #{$formsimple_inputBorderRadius_a}rem  #{$formsimple_inputBorderRadius_b}rem #{$formsimple_inputBorderRadius_c}rem #{$formsimple_inputBorderRadius_d}rem;
+	resize: none;
+	margin: 0 !important;
+	@include border-box;
+	@include formsimple-font;
+
+	&:focus {
+		border-color: darken($formsimple_inputBorderColor, 10%);
+	}
+
+	&:disabled {
+		cursor: not-allowed !important;
+		background: $formsimple_inputBorderColor !important;
+		color: $gray3 !important;
+		border-color: $formsimple_inputBorderColor !important;
+	}
+}

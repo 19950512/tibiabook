@@ -1,0 +1,12 @@
+.miniatura-traducao {
+	display: block;
+	background-color: #ffffff;
+	padding: 1rem;
+	@include border-box;
+	color: $gray1;
+
+	& .block {
+		padding: 0 .05rem;
+		@include border-box;
+	}
+}

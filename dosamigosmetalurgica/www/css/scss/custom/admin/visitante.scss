@@ -1,0 +1,53 @@
+.miniatura-visitante {
+	display: block;
+	width: 100%;
+	background-color: #ffffff;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	@include border-radius($borderRadius);
+	@include border-box;
+
+	&:hover {
+		@include box-shadow('0 0 5px 2px rgba(0,0,0,.1)');
+	}
+
+	& .miniatura-visitante-img {
+		display: inline-block;
+		width: 20%;
+		vertical-align: middle;
+		
+		& img {
+			display: block;
+			width: 3.5rem;
+			height: 3.5rem;
+			@include border-radius('50%');
+		}
+	}
+
+	& .miniatura-visitante-detalhes {
+		display: inline-block;
+		width: 80%;
+		vertical-align: middle;
+		padding-left: .3rem;
+		@include border-box;
+
+		& p {
+			overflow: hidden;
+			height: 1.1rem;
+		}
+	}
+}
+
+
+.img_perfil {
+	display: block;
+	width: 50%;
+
+	& img {
+		display: block;
+		width: 10rem;
+		margin: auto;
+		height: 10rem;
+		@include border-radius('50%');
+	}
+}

@@ -1,0 +1,84 @@
+.formsimple-select {
+	outline: none;
+	vertical-align: middle;
+	display: inline-block;
+	position: relative;
+	min-width: 50px;
+	cursor: pointer !important;
+	line-height: #{($formsimple_inputHeight - ($formsimple_inputBorder * 2))}px;
+	@include margin-padrao;
+	background-color: $formsimple_inputBackgroundColor;
+	border: #{$formsimple_inputBorder}px solid $formsimple_inputBorderColor;
+	border-radius: var(--Border-radius);
+	@include border-box;
+	user-select: none;
+	@include formsimple-font;
+
+	& select {
+		padding: 0px #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px 0px #{$formsimple_inputPdRight}px;
+		cursor: pointer !important;
+		width: 100%;
+		line-height: inherit;
+		background-color: rgba(0,0,0,0) !important;
+		border: none !important;
+		z-index: 1;
+		font-size: inherit;
+		font-weight: inherit;
+		border-radius: var(--Border-radius);
+	}
+
+	&::after {	
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		z-index: 0;
+		text-align: center;
+		width: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+		line-height: #{$formsimple_inputHeight - ($formsimple_inputBorder * 2)}px;
+		content: "\f107";
+		font-size: 20px !important;
+		color: $formsimple_labelColor;
+		font-family: 'Objetiva Software Light' !important;
+		transform: rotate(0deg);
+		transform-origin: center;
+		transition: transform 0.15s ease;
+	}
+
+	&:active {
+		border-color: lighten($formsimple_inputBorderColor, 10%);
+	}
+
+	/* Isso buga no firefox.
+	&:active::after {
+		content: "\e316";
+	}*/
+}
+
+.formsimple-select-right {
+	border-radius: #{$formsimple_inputBorderRadius_a}px  0 0 #{$formsimple_inputBorderRadius_d}px;
+	border-right: none;
+}
+
+.formsimple-select-left {
+	border-radius: 0 #{$formsimple_inputBorderRadius_a}px #{$formsimple_inputBorderRadius_d}px 0;
+	border-left: none;
+}
+
+.formsimple-select-center {
+	border-radius: 0;
+	border-right: none;
+	border-left: none;
+}
+
+
+.formsimple-select-top {
+	border-radius: #{$formsimple_inputBorderRadius_a}px #{$formsimple_inputBorderRadius_d}px 0 0;
+	border-bottom: none;
+}
+
+.formsimple-select-bottom {
+	border-radius: 0 0 #{$formsimple_inputBorderRadius_a}px #{$formsimple_inputBorderRadius_d}px;
+	border-top: none;
+}

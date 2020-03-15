@@ -1,0 +1,101 @@
+.formsimple-input {
+	@include prefix('outline', none);
+	padding: 0 #{$formsimple_inputPdLeft}rem 0 #{$formsimple_inputPdRight}rem;
+	vertical-align: middle;
+	line-height: #{($formsimple_inputHeight - ($formsimple_inputBorder * 2))}rem;
+	min-width: #{$formsimple_inputHeight}rem;
+	@include margin-padrao;
+	background-color: $formsimple_inputBackgroundColor;
+	border: #{$formsimple_inputBorder}rem solid $formsimple_inputBorderColor;
+	border-radius: $borderRadius;
+	@include prefix('box-shadow', none);
+	@include border-box;
+	@include formsimple-font;
+
+	&:focus {
+		border-color: lighten($formsimple_inputBorderColor, 10%);
+	}
+
+	&:disabled {
+		cursor: not-allowed !important;
+		background: $formsimple_inputBorderColor !important;
+		color: $gray1 !important;
+		border-color: $formsimple_inputBorderColor !important;
+	}
+
+	&:disabled::placeholder{
+		color: $gray1 !important;
+		font-weight: normal !important;
+	}
+
+	&:input:-webkit-autofill {
+		-webkit-box-shadow:0 0 0 50px rgba(0,0,0,0) inset !important;
+		-webkit-text-fill-color: #ffffff !important;
+		-webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+		-webkit-transition-delay: 9999s;
+	}
+
+	&[type="number"]{
+		text-align: right;
+	}
+
+	&[type="password"]{
+		font-weight: 700 !important;
+	}
+
+	&[type="color"]{
+		padding: 0 !important;
+
+		/* Mozila */
+		&::-moz-color-swatch-wrapper{
+			padding: 0 !important;
+		}
+		&::-moz-color-swatch{
+			border: none !important;
+		}
+
+		/* Chrome */
+		&::-webkit-color-swatch-wrapper{
+			padding: 0 !important;
+		}
+		&::-webkit-color-swatch{
+			border: none !important;
+		}
+	}
+
+}
+
+.input-white {
+	color: #ffffff !important;
+}
+.formsimple-input-noleft {
+	border-left: none !important;
+	border-radius: 0  #{$formsimple_inputBorderRadius_b}rem #{$formsimple_inputBorderRadius_c}rem 0 !important;
+}
+
+.formsimple-input-nocenter {
+	border-left: none !important;
+	border-right: none !important;
+	border-radius: 0 !important;
+}
+.formsimple-input-noright {
+	border-right: none !important;
+	border-radius: #{$formsimple_inputBorderRadius_a}rem  0 0 #{$formsimple_inputBorderRadius_d}rem !important;
+}
+
+.formsimple-input-notop{
+	border-radius: 0 0 #{$formsimple_inputBorderRadius_c}rem #{$formsimple_inputBorderRadius_d}rem !important;
+	border-top: none !important;
+	margin-top: 0 !important;
+}
+.formsimple-input-novcenter{
+	border-radius: 0 !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	margin: 0 !important;
+}
+.formsimple-input-nobottom{
+	border-radius: #{$formsimple_inputBorderRadius_a}rem #{$formsimple_inputBorderRadius_b}rem 0 0 !important;
+	border-bottom: none !important;
+	margin-bottom: 0 !important;
+}

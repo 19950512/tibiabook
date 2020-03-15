@@ -1,0 +1,349 @@
+/* CONFIG BTN */
+$prefix: 'b';
+$btnHeight: 2.3;
+
+$btnBorder: 1;
+$btnBorderRadius: 0;
+
+$btnPdLeft: 1.5;
+$btnPdRight: 1.5;
+
+$btnFont: 0.75;
+$btnFontWeight: 400;
+
+
+/* BTN */
+.#{$prefix}{
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: calc(#{$btnHeight}rem - #{(2 * $btnBorder)}px);
+	text-align: center;
+	border: #{$btnBorder}px solid #{$gray4};
+	border-radius: $borderRadius;
+	padding-left: #{$btnPdLeft}rem;
+	padding-right: #{$btnPdRight}rem;
+	padding-top: 0;
+	padding-bottom: 0;
+	background-color: $gray4;
+	color: $gray1;
+	font-size: #{$btnFont}rem;
+	font-weight: $btnFontWeight;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	word-spacing: normal;
+	transition: background .25s linear;
+	outline: none;
+	@include margin-padrao;
+	@include user-select(none);
+	@include border-box;
+	transition: background .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		border .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		color .15s linear, 
+		scale .15s linear, 
+		translateY .15s linear;
+}
+
+
+.#{$prefix}-no-margin, a.#{$prefix}-no-margin{
+	margin: 0 !important;
+}
+
+.#{$prefix}-no-right, a.#{$prefix}-no-right{
+	border-right: none !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+.#{$prefix}-no-center, a.#{$prefix}-no-center{
+	border-right: none !important;
+	border-left: none !important;
+	border-radius: 0 !important;
+}
+.#{$prefix}-no-left, a.#{$prefix}-no-left{
+	border-left: none !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+
+.#{$prefix}-no-bottom, a.#{$prefix}-no-bottom{
+	border-bottom: none !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+.#{$prefix}-no-vcenter, a.#{$prefix}-no-vcenter{
+	border-top: none !important;
+	border-bottom: none !important;
+	border-radius: 0 !important;
+}
+.#{$prefix}-no-top, a.#{$prefix}-no-top{
+	border-top: none !important;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
+.#{$prefix}-text-left, a.#{$prefix}-text-left{
+	text-align: left !important;
+}
+.#{$prefix}-text-right, a.#{$prefix}-text-right{
+	text-align: right !important;
+}
+
+.#{$prefix}:hover, .#{$prefix}:focus, a.#{$prefix}:hover, a.#{$prefix}:focus{
+	background-color: darken($gray4, 5%);
+	color: darken($gray1, 5%);
+	border-color: darken($gray3, 5%);
+	transition: background .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		border .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		color .15s linear, 
+		scale .15s linear, 
+		translateY .15s linear;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.#{$prefix}:active, a.#{$prefix}:active{
+	background-color: darken($gray4, 10%);
+	color: darken($gray1, 10%);
+	border-color: darken($gray3,10%);
+	transition: background .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		border .15s cubic-bezier(0.45, 0, 0.95, 0.5), 
+		color .15s linear, 
+		scale .15s linear, 
+		translateY .15s linear;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.#{$prefix}:disabled, .#{$prefix}:disabled:hover, .#{$prefix}-disabled, .#{$prefix}-disabled:hover, .#{$prefix}-disabled:focus, .#{$prefix}-disabled:active{
+	background-color: rgba(0,0,0,0);
+	cursor: default;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.#{$prefix} i{
+	font-size: inherit !important;
+}
+
+@mixin make-button($name, $a, $b, $c, $d){
+
+	.#{$prefix}-#{$name}, a.#{$prefix}-#{$name}, a.#{$prefix}-#{$name}:visited{
+
+		@if $a == rgba(0,0,0,0) {
+			background-color: rgba(0,0,0,0);
+		} @else {
+			background-color: $a;
+		}
+
+		@if $b == rgba(0,0,0,0) {
+			color: rgba(0,0,0,0);
+		} @else {
+			color: $b;
+		}
+
+		@if $c == rgba(0,0,0,0) {
+			border-color: rgba(0,0,0,0);
+		} @else {
+			border-color: darken($c, 5%);
+		}
+
+		@if $d > 0 {
+			line-height: #{$btnHeight - ($d * 2)}rem;
+		} @else {
+			line-height: #{$btnHeight}rem;
+		}
+
+		border-width: #{$d}rem;
+	}
+}
+
+@mixin make-button-hover($name, $a, $b, $c, $d){
+	.#{$prefix}-#{$name}:hover, .#{$prefix}-#{$name}:focus, a.#{$prefix}-#{$name}:hover, a.#{$prefix}-#{$name}:focus{
+
+		@if $a == rgba(0,0,0,0) {
+			background-color: rgba(0,0,0,0);
+		} @else {
+			background-color: darken($a, 5%);
+		}
+
+		@if $b == rgba(0,0,0,0) {
+			color: rgba(0,0,0,0);
+		} @else {
+			color: lighten($b, 10%);
+		}
+
+		@if $c == rgba(0,0,0,0) {
+			border-color: rgba(0,0,0,0);
+		} @else {
+			border-color: darken($c, 15%);
+		}
+
+		@if $d > 0 {
+			line-height: #{$btnHeight - ($d * 2)}rem;
+		} @else {
+			line-height: #{$btnHeight}rem;
+		}
+
+		border-width: #{$d}rem;
+
+	}
+}
+
+@mixin make-button-active($name, $a, $b, $c, $d){
+	.#{$prefix}-#{$name}:active, a.#{$prefix}-#{$name}:active{
+
+		@if $a == rgba(0,0,0,0) {
+			background-color: rgba(0,0,0,0);
+		} @else {
+			background-color: darken($a, 10%);
+		}
+
+		@if $b == rgba(0,0,0,0) {
+			color: rgba(0,0,0,0);
+		} @else {
+			color: lighten($b, 10%);
+		}
+
+		@if $c == rgba(0,0,0,0) {
+			border-color: rgba(0,0,0,0);
+		} @else {
+			border-color:  darken($a, 10%);
+		}
+
+		@if $d > 0 {
+			line-height: #{$btnHeight - ($d * 2)}rem;
+		} @else {
+			line-height: #{$btnHeight}rem;
+		}
+
+		border-width: #{$d}rem;
+	}
+}
+
+/* img */
+@include make-button('img', $transparent, $transparent, $transparent, 0);
+@include make-button-hover('img', $transparent, $transparent, $transparent, 0);
+@include make-button-active('img', $transparent, $transparent, $transparent, 0);
+
+/* menu */
+@include make-button('menu', $colorDanger, $colorWhite, $transparent, 0);
+@include make-button-hover('menu', $colorDanger, $colorWhite, $transparent, 0);
+@include make-button-active('menu', $colorDanger, $colorWhite, $transparent, 0);
+
+/* PRIMARY */
+@include make-button('primary', $colorPrimary, $colorWhite, $gray4, .05);
+@include make-button-hover('primary', $gray4, $colorPrimary, $gray4, .05);
+@include make-button-active('primary', $gray4, $colorPrimary, $gray4, .05);
+
+/* secondary */
+@include make-button('secondary', $colorSecondary, $colorWhite, $transparent, 0);
+@include make-button-hover('secondary', $colorSecondary, $colorWhite, $transparent, 0);
+@include make-button-active('secondary', $colorSecondary, $colorWhite, $transparent, 0);
+
+/* terciary */
+@include make-button('terciary', $colorTerciary, $colorWhite, $transparent, 0);
+@include make-button-hover('terciary', $colorTerciary, $colorWhite, $transparent, 0);
+@include make-button-active('terciary', $colorTerciary, $colorWhite, $transparent, 0);
+
+/* danger */
+@include make-button('danger', $colorDanger, $colorWhite, $transparent, 0);
+@include make-button-hover('danger', $colorDanger, $colorWhite, $transparent, 0);
+@include make-button-active('danger', $colorDanger, $colorWhite, $transparent, 0);
+
+/* flat */
+@include make-button('flat', $transparent, $colorPrimary, $transparent, 1);
+@include make-button-hover('flat', $transparent, $colorPrimary, $transparent, 1);
+@include make-button-active('flat', $transparent, $colorPrimary, $transparent, 1);
+
+/* BOTÃO MENU */
+// COR DO WHATS #1fbea5
+@include make-button('menuDefault', $gray4, $colorWhite, $gray4, 0);
+@include make-button-hover('menuDefault', $gray4, $colorWhite, $gray4, 0);
+@include make-button-active('menuDefault', $gray4, $colorWhite, $gray4, 0);
+
+.#{$prefix}-menuDefault, a.#{$prefix}-menuDefault{
+
+	font-size: 1.5rem !important;
+	border-radius: 50% !important;
+	padding: 0 !important;
+	width: 3.8rem !important;
+	line-height: 3.8rem !important;
+
+	&:hover, &:active, &:focus{
+
+		color: #FFF !important;
+		padding: 0 !important;
+		font-size: 1.5rem !important;
+		border-radius: 50% !important;
+		width: 3.8rem !important;
+		line-height: 3.8rem !important;
+	}
+}
+
+.b-white {
+
+	background-color: #ffffff !important;
+	&:hover, &:active, &:focus, &:visited {
+		background-color: #ffffff !important;
+	}
+}
+.b-whats {
+	background-color: #1fbea5 !important;
+	&:hover, &:active, &:focus, &:visited {
+		background-color: #1fbea5 !important;
+	}
+}
+
+.b-transparent {
+	background-color: rgba(0,0,0,0) !important;
+	border: 0 !important;
+	&:hover, &:active, &:focus, &:visited {
+		background-color: rgba(0,0,0,0) !important;
+	}
+}
+
+.b-flat {
+
+}
+.b-img {
+	padding: 0;
+	@include border-box;
+	width: 2rem;
+
+	@include box-shadow(none);
+
+	&:hover, &:focus, &:active, &:visited {
+		@extend .b-img;
+	}
+
+	& img, {
+		display: block;
+		width: 100%;
+	}
+
+	&:hover, &:focus, &:active, &:visited {
+		box-shadow: none !important;
+	}
+}
+
+.b-menu {
+	height: 3rem;
+	width: 3rem;
+	line-height: 3rem;
+	padding: 0;
+	font-size: 1.4rem;
+	text-align: center;
+	background-color: $colorDanger;
+	@include border-radius('50%');
+
+	&:hover, &:focus, &:active, &:visited {
+		@extend .b-menu;
+	}
+}
+.b-paginacao-disabled {
+	color: $gray2;
+	background-color: rgba(0,0,0,0) !important;
+	border-color: rgba($gray4, .5) !important;
+	cursor: default;
+
+	&:active, &:focus, &:disabled, &:hover{
+		@extend .b-paginacao-disabled;
+	}
+}

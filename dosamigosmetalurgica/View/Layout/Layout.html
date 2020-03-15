@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>{{titulo_page}}</title>
+		{{metas}}
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+		<meta name="theme-color" content="{{color_primary}}">
+		<meta name="application-name" content="{{site_nome}}">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="theme-color" content="{{color_primary}}">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="manifest" content="{{domain_statics}}/manifest.json">
+		<meta name="apple-mobile-web-app-title" content="{{site_nome}}">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="{{color_primary}}">
+		<meta name="apple-touch-startup-image" content="{{domain_statics}}/site.png">
+		<meta name="msapplication-navbutton-color" content="{{color_primary}}">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="msapplication-TileColor" content="{{color_primary}}">
+		<meta name="msapplication-TileImage" content="{{domain_statics}}/site.png">
+		<meta name="msapplication-square310x310logo" content="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" media="all" href="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{domain_statics}}/site.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{domain_statics}}/site.png">
+
+
+		<style>
+			:root {
+				--domain_statics: '{{domain_statics}}';
+			}
+		</style>
+
+		<link rel="shortcut icon" href="{{domain_statics}}/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="{{domain_statics}}/favicon.ico" type="image/x-icon">
+		<script src="{{domain_statics}}/js/dev.min.js?cache={{time}}"></script>
+		<script src="{{domain_statics}}/js/site.min.js" defer="defer" async="async"></script>
+		<link rel="stylesheet" media="all" type="text/css" href="{{domain_statics}}/css/icones.min.css">
+		<link rel="stylesheet" href="{{domain_statics}}/css/site.min.css?cache={{time}}">
+	</head>
+	<body>
+		<header class="header-mobile no-pc">
+			<div class="content content_m">
+				<div class="inline-block calc-l-8 text-left align-middle">
+					<a href="/" title="INÍCIO">
+						<div class="header-logo">
+							<img src="{{domain_statics}}/img/logo/logo-b.png" alt="{{site_nome}}" title="{{site_nome}}">
+						</div>
+					</a>
+				</div>
+				<div class="inline-block calc-r-8 text-right align-middle"><button onclick="adminToggleMenu();" type="button" class="b b-primary white"><i class="icl ic-bars"></i></button></div>
+			</div>
+		</header>
+
+		<nav class="content-navigation content_m content_h content no-mobile">
+			<ul class="navigation">
+				<a href="/"><li>INÍCIO</li></a>
+				<a href="/contato"><li>CONTATO</li></a>
+				<a data-href="false" onclick="logout(this);"><li>LOGOUT</li></a>
+			</ul>
+		</nav>
+
+		<nav id="content_navigation" class="content-navigation-mobile content_m no-pc">
+			<div class="inline-block calc-l-8 text-left"><h2>MENU</h2></div>
+			<div class="inline-block calc-r-8 text-right"><button onclick="adminToggleMenu();" type="button" class="b b-primary"><i class="icl ic-times"></i></button></div>
+			<hr />
+			<div class="site-space-1"></div>
+			<ul class="navigation-mobile">
+				<a href="/"><li>INÍCIO</li></a>
+				<a href="/contato"><li>CONTATO</li></a>
+				<a data-href="false" onclick="logout(this);"><li>LOGOUT</li></a>
+			</ul>
+		</nav>
+		<main id="content">
+			{{view}}
+		</main>
+		<div id="push-loader"></div>
+		<div id="feed_back" class="feed_back"></div>
+	</body>
+</html>
+<script>
+	window.adminToggleMenu = e => {
+
+		if(content_navigation.classList.contains('navigation-mobile-open')){
+			adminCloseMenu();
+		}else{
+			adminOpenMenu();
+		}
+	};
+
+	window.adminCloseMenu = e => {
+		content_navigation.classList.remove('navigation-mobile-open');
+		document.body.style.overflow = null;
+	};
+	window.adminOpenMenu = e => {
+		content_navigation.classList.add('navigation-mobile-open');
+		document.body.style.overflow = 'hidden';
+	};
+
+	window.logout = async btn => {
+
+		var login = dev.ajax('/Tvvisitante/logout', {
+		});
+
+		login.then(res => {
+
+			var cor = (res.r == 'ok') ? 'blue' : 'red';
+
+			dev.mensagem(res.data, cor);
+
+			if(res.r == 'ok'){
+				window.location.href = '/Tvvisitante';
+			}
+
+		}).catch(res => {
+			console.error("Ops, algo de errado não deu certo.", res);
+		});
+	};
+</script>
