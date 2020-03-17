@@ -3,6 +3,7 @@
 namespace Model\Sites\Admin\Pessoas;
 
 use Model\Core\De as de;
+use Model\Core\Core;
 use Model\Model;
 use PDO;
 
@@ -29,7 +30,7 @@ class Pessoas extends Model{
 	// return 'ok' => 'Cadastrado com sucesso'
 	private function _add($data){
 
-		$ip = $_SERVER['REMOTE_ADDR'];
+		$ip = Core::ip();
 		$sql = $this->conexao->prepare('
 			INSERT INTO pessoas (
 				pes_nome,

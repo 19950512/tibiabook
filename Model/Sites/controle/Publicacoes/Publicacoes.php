@@ -99,7 +99,7 @@ class Publicacoes extends Model{
 
 	public function salvar($data = []){
 
-		$pub_ip = $_SERVER['REMOTE_ADDR'];
+		$pub_ip = Core::ip();
 
 		$data['pub_texto'] =  str_replace("'", "\'", $data['pub_texto']);
 		$pub_texto = $data['pub_texto'];
@@ -147,7 +147,7 @@ class Publicacoes extends Model{
 
 	public function update($data = []){
 
-		$pub_ip = $_SERVER['REMOTE_ADDR'];
+		$pub_ip = Core::ip();
 
 		$data['pub_texto'] =  str_replace("'", "\'", $data['pub_texto']);
 		$pub_texto = $data['pub_texto'];

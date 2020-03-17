@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>{{titulo}}</title>
 </head>
 <style>
 	.content {
@@ -40,26 +40,21 @@
 	</div>
 			
 	<div class="content">
-		<h1 class="titulo">Matheus Maydana, deixou uma mensagem</h1>
+		<h1 class="titulo">{{titulo}}</h1>
 		<div class="site-space-10"></div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>{{mensagem}}</p>
 
 		<div class="site-space-10"></div>
 		<hr style="border-color: rgba(255,255,255,.2)" />
 		<div class="site-space-10"></div>
 
 		<div style="vertical-align: top; display: inline-block; width: 50%">
-			<p style="font-size: 16px; font-weight: 400;">Nome<br /> <span style="font-weight: 600;">Matheus Maydana</span> <br /><br />
-			E-mail<br /> <span style="font-weight: 600;">matheus@objetivawebsites.com.br</span> <br /><br />
+			<p style="font-size: 16px; font-weight: 400;">Nome<br /> <span style="font-weight: 600;">{{vis_nome}}</span> <br /><br />
+			E-mail<br /> <span style="font-weight: 600;">{{vis_email}}</span> <br /><br />
 			</p>
 		</div><div style="vertical-align: top; display: inline-block; width: 50%">
-			<p style="font-size: 16px; font-weight: 400;">Cidade<br /> <span style="font-weight: 600;">Marau/RS</span> <br /><br />
-			Whatsapp<br /> <span style="font-weight: 600;">(54) 9 2000-694</span></p>
+			<p style="font-size: 16px; font-weight: 400;">Cidade<br /> <span style="font-weight: 600;">{{vis_cidade}}</span> <br /><br />
+			Whatsapp<br /> <span style="font-weight: 600;">{{vis_whats}}</span></p>
 		</div>
 
 		<div class="site-space-10"></div>
@@ -67,14 +62,14 @@
 		<div class="site-space-10"></div>
 
 		<div style="text-align: center;">
-			<p style="font-size: 12px;"><span style="font-weight: 600;">16/03/2020 às 23:51</span><br/>
-			216.54.32.772</span></p>
+			<p style="font-size: 12px;"><span style="font-weight: 600;">{{momento}}</span><br/>
+			{{ip}}</span></p>
 		</div>
 	</div>
 
 	<div style="min-height: 80px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2); width: 100%; background-color: #ffffff; color: #020202">
 		<div class="content" style="padding: 20px;">
-			<p style="text-align: center;">Todos os direitos reservados © 2020 - 2020</p>
+			<p style="text-align: center;">Todos os direitos reservados © 2020 - {{ano}}</p>
 			<p style="font-size: 13px; text-align: center;">desenvolvido por Matheus Maydana</p>
 		</div>
 	</div>

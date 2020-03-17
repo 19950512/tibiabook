@@ -44,7 +44,7 @@ class Comentarios extends Model{
 
 	public function salvar($data = []){
 
-		$com_ip = $_SERVER['REMOTE_ADDR'];
+		$com_ip = Core::ip();
 
 		$data['com_texto'] =  str_replace("'", "\'", $data['com_texto']);
 		$com_texto = $data['com_texto'];
@@ -89,7 +89,7 @@ class Comentarios extends Model{
 
 	public function update($data = []){
 
-		$com_ip = $_SERVER['REMOTE_ADDR'];
+		$com_ip = Core::ip();
 
 		$data['com_texto'] =  str_replace("'", "\'", $data['com_texto']);
 		$com_texto = $data['com_texto'];

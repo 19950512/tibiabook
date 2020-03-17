@@ -47,7 +47,9 @@ class Contato extends Controller
 			$vis_nome		 	= Core::strip_tags($_POST['nome'] ?? '');
 			$vis_telefone	 	= Core::strip_tags($_POST['telefone'] ?? '');
 			$vis_celular	  	= Core::strip_tags($_POST['celular'] ?? '');
+			$vis_whats	  		= Core::strip_tags($_POST['whatsapp'] ?? '');
 			$vis_email			= Core::strip_tags($_POST['email'] ?? '');
+			$vis_cidade			= Core::strip_tags($_POST['cidade'] ?? '');
 			$vis_mensagem	 	= Core::strip_tags($_POST['mensagem'] ?? '');
 
 			// Seta novos dados do visitante
@@ -55,8 +57,10 @@ class Contato extends Controller
 				'vis_nome' => $vis_nome,
 				'vis_tel' => $vis_telefone,
 				'vis_cel' => $vis_celular,
+				'vis_whats' => $vis_whats,
 				'vis_email' => $vis_email,
-				'vis_ip' => $_SERVER['REMOTE_ADDR'],
+				'vis_cidade' => $vis_cidade,
+				'vis_ip' => Core::ip(),
 			];
 
 			// Sincroniza o visitante, atualiza se já existe ou registra um novo
@@ -68,10 +72,23 @@ class Contato extends Controller
 			$enviar['nome'] = 'Matheus Maydana';
 			$enviar['para'] = ['mattmaydana@gmail.com' => 'Jamais'];
 			$enviar['comoCopiaOculta'] = ['developer.web42@gmail.com' => 'DevNux'];
-			$enviar['assunto'] = 'Teste';
-			$enviar['body'] = '<h1>Teste =D</h1>';
+			$enviar['assunto'] = $vis_nome.', deixou uma mensagem';
 
-			//$enviarEmail = $Email->enviar($enviar); 
+			$mustache = [
+				'{{titulo}}' 		=> $vis_nome.', deixou uma mensagem',
+				'{{mensagem}}' 		=> $vis_mensagem,
+				'{{vis_nome}}' 		=> $vis_nome,
+				'{{vis_email}}' 	=> $vis_email,
+				'{{vis_whats}}' 	=> $vis_whats,
+				'{{vis_cidade}}' 	=> $vis_cidade,
+				'{{ano}}' 			=> Core::date('Y'),
+				'{{momento}}' 		=> Core::date('d/m/Y').' às '.Core::date('h:i:s'),
+				'{{ip}}' 			=> Core::ip()
+			];
+
+			$enviar['body'] = Core::mustache($mustache, $this->view->getLayout('email'));
+
+			$enviarEmail = $Email->enviar($enviar); 
 
 			$enviarEmail = true;
 			$resposta = ($enviarEmail) ? ['r' => 'ok', 'data' => 'Feito, mensagem enviada com sucesso.'] : ['r' => 'no', 'data' => 'Ops, tente novamente mais tarde.'];

@@ -139,7 +139,7 @@ class Tv extends Model{
 
 	public function salvar($data = []){
 
-		$plist_ip = $_SERVER['REMOTE_ADDR'];
+		$plist_ip = Core::ip();
 
 		$now = 'now()';
 		$sql = $this->conexao->prepare("
@@ -270,7 +270,7 @@ class Tv extends Model{
 
 	public function update($data = []){
 
-		$plist_ip = $_SERVER['REMOTE_ADDR'];
+		$plist_ip = Core::ip();
 
 		$now = 'now()';
 		$sql = $this->conexao->prepare("
@@ -311,7 +311,7 @@ class Tv extends Model{
 	/* MÚSICAS PARA A PLAYLIST JÁ CRIADA */
 	public function addmusica($data = []){
 
-		$tv_ip = $_SERVER['REMOTE_ADDR'];
+		$tv_ip = Core::ip();
 
 		$data['tv_descricao'] =  substr(str_replace("'", "\'", $data['tv_descricao']),0, 5000);
 		$tv_descricao = $data['tv_descricao'];

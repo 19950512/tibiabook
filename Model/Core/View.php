@@ -79,7 +79,7 @@ class View {
 	}
 
 	public function getLayout($layout = 'Layout'){
-		$pathView = LAYOUT . DS . $layout . EXTENSAO_VIEW;
+		$pathView = DIR . DS . $this->Router->sites[$_SERVER['SERVER_NAME']]['namespace'] . DS . VIEW . DS . LAYOUT . DS . $layout . EXTENSAO_VIEW;
 		return file_exists($pathView) ? file_get_contents($pathView) : '';
 	}
 

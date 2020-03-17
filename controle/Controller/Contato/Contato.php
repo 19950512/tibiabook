@@ -5,6 +5,7 @@ namespace controle\Controller\Contato;
 
 use controle\Controller\Controller;
 use Model\Core\De as de;
+use Model\Core\Core;
 use Model\Email\Email;
 
 class Contato extends Controller
@@ -51,7 +52,7 @@ class Contato extends Controller
 				'vis_tel' => $vis_telefone,
 				'vis_cel' => $vis_celular,
 				'vis_email' => $vis_email,
-				'vis_ip' => $_SERVER['REMOTE_ADDR'],
+				'vis_ip' => Core::ip(),
 			];
 
 			// Sincroniza o visitante, atualiza se já existe ou registra um novo
