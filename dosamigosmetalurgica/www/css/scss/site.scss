@@ -15,8 +15,8 @@ html{
 
 body{
 	font-family: 'WebFont', sans-serif;
-	background-color: $gray1;
-	color: #ffffff;
+	background-color: #f1f1f1;
+	color: $gray1;
 	font-weight: 200;
 	margin: 0;
 	padding: 0;
@@ -31,7 +31,7 @@ h1, .h1{
 	line-height: 1.1em;
 	padding: 0;
 	margin: 0.8rem 0 0.8rem 0;
-	color: #ffffff;
+	color: $gray1;
 }
 
 h2, .h2{
@@ -40,7 +40,7 @@ h2, .h2{
 	line-height: 1.1em;
 	padding: 0;
 	margin: 0.8rem 0 0.8rem 0;
-	color: #ffffff;
+	color: $gray1;
 }
 
 h3, .h3{
@@ -56,7 +56,7 @@ h4, .h4{
 	font-size: 1rem;
 	font-weight: 500;
 	line-height: 1.1em;
-	color: #ffffff;
+	color: $gray1;
 	padding: 0;
 	margin: 0.8rem 0 0.8rem 0;
 }
@@ -65,7 +65,7 @@ a{
 	font-size: 1rem;
 	text-decoration:none;
 	cursor:pointer;
-	color: #ffffff;
+	color: $gray1;
 
 	&:hover {
 
@@ -80,7 +80,7 @@ div{
 
 p{
 	font-weight: 300;
-	color: #ffffff;
+	color: $gray1;
 	line-height: 1.4em;
 	margin: 10px 0;
 	font-size: .86rem;

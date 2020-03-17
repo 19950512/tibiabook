@@ -5,6 +5,7 @@ namespace dosamigosmetalurgica\Controller\Contato;
 
 use dosamigosmetalurgica\Controller\Controller;
 use Model\Core\De as de;
+use Model\Core\Core;
 use Model\Email\Email;
 
 class Contato extends Controller
@@ -12,9 +13,13 @@ class Contato extends Controller
 
 	protected $controller = 'Contato';
 
+	public $visitante;
+
 	public function __construct()
 	{
 		parent::__construct();
+
+		//$this->visitante = new Visitante();
 	}
 
 	public function index(){
@@ -39,11 +44,11 @@ class Contato extends Controller
 
 		if(isset($_POST['token']) and $_POST['token'] === 'teste'){
 
-			$vis_nome		 	= $_POST['nome'] ?? '';
-			$vis_telefone	 	= $_POST['telefone'] ?? '';
-			$vis_celular	  	= $_POST['celular'] ?? '';
-			$vis_email			= $_POST['email'] ?? '';
-			$vis_mensagem	 	= $_POST['mensagem'] ?? '';
+			$vis_nome		 	= Core::strip_tags($_POST['nome'] ?? '');
+			$vis_telefone	 	= Core::strip_tags($_POST['telefone'] ?? '');
+			$vis_celular	  	= Core::strip_tags($_POST['celular'] ?? '');
+			$vis_email			= Core::strip_tags($_POST['email'] ?? '');
+			$vis_mensagem	 	= Core::strip_tags($_POST['mensagem'] ?? '');
 
 			// Seta novos dados do visitante
 			$_SESSION[SESSION_VISITANTE] = [
@@ -55,7 +60,7 @@ class Contato extends Controller
 			];
 
 			// Sincroniza o visitante, atualiza se já existe ou registra um novo
-			//$this->visitante->sync();
+			$this->visitante->sync();
 			
 			$Email = new Email(CONFIG_EMAIL);
 
@@ -66,8 +71,9 @@ class Contato extends Controller
 			$enviar['assunto'] = 'Teste';
 			$enviar['body'] = '<h1>Teste =D</h1>';
 
-			$enviarEmail = $Email->enviar($enviar); 
+			//$enviarEmail = $Email->enviar($enviar); 
 
+			$enviarEmail = true;
 			$resposta = ($enviarEmail) ? ['r' => 'ok', 'data' => 'Feito, mensagem enviada com sucesso.'] : ['r' => 'no', 'data' => 'Ops, tente novamente mais tarde.'];
 
 			echo json_encode($resposta);

@@ -6776,8 +6776,8 @@ html {
 
 body {
   font-family: 'WebFont', sans-serif;
-  background-color: #020202;
-  color: #ffffff;
+  background-color: #f1f1f1;
+  color: #020202;
   font-weight: 200;
   margin: 0;
   padding: 0;
@@ -6791,7 +6791,7 @@ h1, .h1 {
   line-height: 1.1em;
   padding: 0;
   margin: 0.8rem 0 0.8rem 0;
-  color: #ffffff; }
+  color: #020202; }
 
 h2, .h2 {
   font-size: 1.4rem;
@@ -6799,7 +6799,7 @@ h2, .h2 {
   line-height: 1.1em;
   padding: 0;
   margin: 0.8rem 0 0.8rem 0;
-  color: #ffffff; }
+  color: #020202; }
 
 h3, .h3 {
   font-size: 1.3rem;
@@ -6812,7 +6812,7 @@ h4, .h4 {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.1em;
-  color: #ffffff;
+  color: #020202;
   padding: 0;
   margin: 0.8rem 0 0.8rem 0; }
 
@@ -6820,7 +6820,7 @@ a {
   font-size: 1rem;
   text-decoration: none;
   cursor: pointer;
-  color: #ffffff; }
+  color: #020202; }
   a:hover {
     color: #0E1428; }
 
@@ -6830,7 +6830,7 @@ div {
 
 p {
   font-weight: 300;
-  color: #ffffff;
+  color: #020202;
   line-height: 1.4em;
   margin: 10px 0;
   font-size: .86rem; }
@@ -7060,7 +7060,7 @@ p {
   line-height: calc(2.3rem - 2px);
   text-align: center;
   border: 1px solid #C3C3C3;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0;
@@ -7584,7 +7584,7 @@ p {
   font-family: inherit  !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #f1f1f1 !important;
+  color: #020202 !important;
   margin: .3rem 0;
   font-size: 1.1rem !important; }
 
@@ -7601,7 +7601,7 @@ p {
   margin: .15rem 0 .15rem 0;
   background-color: transparent;
   border: 0.05rem solid #C3C3C3;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   -ms-box-shadow: none !important;
@@ -7615,7 +7615,7 @@ p {
   font-family: inherit  !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #f1f1f1 !important; }
+  color: #020202 !important; }
   .formsimple-input:focus {
     border-color: #dddddd; }
   .formsimple-input:disabled {
@@ -7653,7 +7653,7 @@ p {
 
 .formsimple-input-noleft {
   border-left: none !important;
-  border-radius: 0 0.5rem 0.5rem 0 !important; }
+  border-radius: 0 0.2rem 0.2rem 0 !important; }
 
 .formsimple-input-nocenter {
   border-left: none !important;
@@ -7662,10 +7662,10 @@ p {
 
 .formsimple-input-noright {
   border-right: none !important;
-  border-radius: 0.5rem 0 0 0.5rem !important; }
+  border-radius: 0.2rem 0 0 0.2rem !important; }
 
 .formsimple-input-notop {
-  border-radius: 0 0 0.5rem 0.5rem !important;
+  border-radius: 0 0 0.2rem 0.2rem !important;
   border-top: none !important;
   margin-top: 0 !important; }
 
@@ -7676,7 +7676,7 @@ p {
   margin: 0 !important; }
 
 .formsimple-input-nobottom {
-  border-radius: 0.5rem 0.5rem 0 0 !important;
+  border-radius: 0.2rem 0.2rem 0 0 !important;
   border-bottom: none !important;
   margin-bottom: 0 !important; }
 
@@ -7692,7 +7692,7 @@ p {
   margin: 2px 0px 2px 0px;
   background-color: transparent;
   border: 0.05px solid #C3C3C3;
-  border-radius: 0.5px 0.5px 0.5px 0.5px;
+  border-radius: 0.2px 0.2px 0.2px 0.2px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -7701,7 +7701,7 @@ p {
   font-family: inherit  !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #f1f1f1 !important; }
+  color: #020202 !important; }
   .formsimple-upload input {
     position: absolute !important;
     left: 0;
@@ -7724,7 +7724,7 @@ p {
   border: 1px solid #C3C3C3;
   height: 2.4rem;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   cursor: pointer; }
 
 .boss-upload input {
@@ -7786,7 +7786,7 @@ p {
   min-width: 2.5rem;
   background-color: transparent;
   border: 0.05rem solid #C3C3C3;
-  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
   resize: none;
   margin: 0 !important;
   box-sizing: border-box;
@@ -7797,7 +7797,7 @@ p {
   font-family: inherit  !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #f1f1f1 !important; }
+  color: #020202 !important; }
   .formsimple-textarea:focus {
     border-color: #aaaaaa; }
   .formsimple-textarea:disabled {
@@ -7827,7 +7827,7 @@ p {
   font-family: inherit  !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
-  color: #f1f1f1 !important;
+  color: #020202 !important;
   /* Isso buga no firefox.
 	&:active::after {
 		content: "\e316";
@@ -7864,11 +7864,11 @@ p {
     border-color: #dddddd; }
 
 .formsimple-select-right {
-  border-radius: 0.5px 0 0 0.5px;
+  border-radius: 0.2px 0 0 0.2px;
   border-right: none; }
 
 .formsimple-select-left {
-  border-radius: 0 0.5px 0.5px 0;
+  border-radius: 0 0.2px 0.2px 0;
   border-left: none; }
 
 .formsimple-select-center {
@@ -7877,11 +7877,11 @@ p {
   border-left: none; }
 
 .formsimple-select-top {
-  border-radius: 0.5px 0.5px 0 0;
+  border-radius: 0.2px 0.2px 0 0;
   border-bottom: none; }
 
 .formsimple-select-bottom {
-  border-radius: 0 0 0.5px 0.5px;
+  border-radius: 0 0 0.2px 0.2px;
   border-top: none; }
 
 /* RADIO */
@@ -8107,7 +8107,7 @@ p {
     font-family: inherit  !important;
     font-size: 1rem !important;
     font-weight: 400 !important;
-    color: #f1f1f1 !important; }
+    color: #020202 !important; }
     .formsimple-checkbox-min label span {
       width: 20px;
       height: 20px; }
@@ -8185,7 +8185,7 @@ p {
     font-family: inherit  !important;
     font-size: 1rem !important;
     font-weight: 400 !important;
-    color: #f1f1f1 !important; }
+    color: #020202 !important; }
     .formsimple-selectmultiple .label:hover {
       background-color: #dddddd;
       color: black; }
@@ -8314,11 +8314,11 @@ p {
   background-color: #ffffff;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
+  border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -8397,11 +8397,11 @@ p {
   color: #020202;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
+  border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

@@ -5,10 +5,10 @@ $formsimple_inputFontSize: 1;
 $formsimple_inputBorderCheckbox: 1;
 $formsimple_inputBorderColor: $gray4;
 $formsimple_inputBackgroundColor: rgba(0,0,0,0);
-$formsimple_inputBorderRadius_a: .5;
-$formsimple_inputBorderRadius_b: .5;
-$formsimple_inputBorderRadius_c: .5;
-$formsimple_inputBorderRadius_d: .5;
+$formsimple_inputBorderRadius_a: .2;
+$formsimple_inputBorderRadius_b: .2;
+$formsimple_inputBorderRadius_c: .2;
+$formsimple_inputBorderRadius_d: .2;
 $formsimple_inputBorderRadiusCheckbox: 3;
 $formsimple_inputPdLeft: 1;
 $formsimple_inputPdRight: 1;
@@ -21,7 +21,7 @@ $formsimple_labelColor: $gray1;
 	font-family: inherit  !important;
 	font-size: #{$formsimple_inputFontSize}rem !important;
 	font-weight: 400 !important;
-	color: $gray5 !important;
+	color: $gray1 !important;
 }
 .formulario-titulo {
 	@include formsimple-font();
