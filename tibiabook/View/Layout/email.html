@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{titulo}}</title>
+	<meta name="viewport" content="width=500, initial-scale=1">
+</head>
+<style>
+	.titulo::after{
+		display: block;
+		width: 50%;
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, 5px);
+		content: '';
+		height: 1px;
+		background-color: rgba(0,0,0,.2);
+	}
+	
+</style>
+<body style="display: block; font-family: Roboto; width: 100%; margin: auto; background-color: #f5f5f5">
+	<div style="display: block; font-family: Roboto; width: 100%; margin: auto; background-color: #f5f5f5">
+			
+		<div style="min-height: 80px; position: relative; display: block; box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2); width: 100%; background-color: #ffffff; color: #020202">
+			<div style="display: block; width: 80px; margin: auto; position: absolute; left: 50%; transform: translate(-50%, 50%);">
+				<img style="display: block; width: 100%;  margin: auto;  border-radius: 50%; box-shadow: 0px 2px 5px 1px rgba(0,0,0,.5);" src="https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-9/17903627_271087623335380_6143280040511344880_n.png?_nc_cat=109&_nc_sid=85a577&_nc_oc=AQmP7qoyo6ncAYNlY6uMoO8QDU5KgP7e_EwbsUpk4TFzMFA5XTIThvmGmGRz1xeailY&_nc_ht=scontent-gru2-1.xx&oh=40e5db6f44a90f31c299c63034465645&oe=5E98524F" />
+			</div>
+		</div>
+				
+		<div style="display: block;
+		width: 100%;
+		max-width: 760px;
+		margin: auto;
+		padding: 60px;
+		box-sizing: border-box;">
+			<h1 style="
+		display: block;
+		text-align: center;">{{titulo}}</h1>
+			<div style="
+		display: block;
+		width: 100%;
+		height: 10px;"></div>
+			<p>{{mensagem}}</p>
+
+			<div style="
+		display: block;
+		width: 100%;
+		height: 10px;"></div>
+			<hr style="border-color: rgba(255,255,255,.2)" />
+			<div style="
+		display: block;
+		width: 100%;
+		height: 10px;"></div>
+
+			<div style="vertical-align: top; display: inline-block; width: 50%">
+				<p style="font-size: 16px; font-weight: 400;">Nome<br /> <span style="font-weight: 600;">{{vis_nome}}</span> <br /><br />
+				E-mail<br /> <span style="font-weight: 600;">{{vis_email}}</span> <br /><br />
+				</p>
+			</div><div style="vertical-align: top; display: inline-block; width: 50%">
+				<p style="font-size: 16px; font-weight: 400;">Cidade<br /> <span style="font-weight: 600;">{{vis_cidade}}</span> <br /><br />
+				Whatsapp<br /> <span style="font-weight: 600;">{{vis_whats}}</span></p>
+			</div>
+
+			<div style="
+		display: block;
+		width: 100%;
+		height: 10px;"></div>
+			<hr style="border-color: rgba(255,255,255,.2)" />
+			<div style="
+		display: block;
+		width: 100%;
+		height: 10px;"></div>
+
+			<div style="text-align: center;">
+				<p style="font-size: 12px;"><span style="font-weight: 600;">{{momento}}</span><br/>
+				{{ip}}</span></p>
+			</div>
+		</div>
+
+		<div style="min-height: 80px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2); width: 100%; background-color: #ffffff; color: #020202">
+			<div style="padding: 20px; display: block;
+		width: 100%;
+		max-width: 760px;
+		margin: auto;
+		padding: 60px;
+		box-sizing: border-box;
+		">
+				<p style="text-align: center;">Todos os direitos reservados © 2020 - {{ano}}</p>
+				<p style="font-size: 13px; text-align: center;">desenvolvido por Matheus Maydana</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

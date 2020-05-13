@@ -4,7 +4,6 @@ namespace Model\Core;
 
 use Model\Core\De as de;
 use Model\Router\Router;
-use Model\Sites\Sites;
 
 class View {
 
@@ -26,13 +25,13 @@ class View {
 
 		$this->Router = new Router();
 
-		$this->title = $this->Router->sites[$_SERVER['SERVER_NAME']]['nome'] ?? ''; 
-		$this->description = $this->Router->sites[$_SERVER['SERVER_NAME']]['nome'] ?? ''; 
+		$this->title = SITE_NOME; 
+		$this->description = SITE_NOME; 
 	}
 
 	private function layout($layout = 'Layout'){
 
-		$pathView = DIR . DS . $this->Router->sites[$_SERVER['SERVER_NAME']]['namespace'] . DS . 'View' . DS . LAYOUT . DS . $layout . EXTENSAO_VIEW;
+		$pathView = DIR . DS . SUBDOMINIO . DS . 'View' . DS . LAYOUT . DS . $layout . EXTENSAO_VIEW;
 
 		$layoutView = file_exists($pathView) ? file_get_contents($pathView) : '';
 
@@ -49,14 +48,14 @@ class View {
 		}
 
 		$mustache = array(
-			'{{site_nome}}' => $this->Router->sites[$_SERVER['SERVER_NAME']]['nome'],
+			'{{site_nome}}' => SITE_NOME,
 			'{{language}}' => (empty($this->Router->language)) ? $this->Router->language : $this->Router->language.'/',
 			'{{color_primary}}' => '#0E1428',
 			'{{metas}}' => $this->_getHead(),
 			'{{titulo_page}}' => $this->title,
 			'{{time}}' => time(),
 			'{{model_options}}' => $model_options,
-			'{{domain_statics}}' => $this->Router->sites[$_SERVER['SERVER_NAME']]['statics']
+			'{{domain_statics}}' => '//'.SITE_STATICS
 		);
 
 		$layout = str_replace(array_keys($mustache), array_values($mustache), $layoutView);
@@ -74,12 +73,12 @@ class View {
 	}
 
 	public function getView($controlador = 'Index', $view = 'Index'){ 
-		$pathView = DIR . DS . $this->Router->sites[$_SERVER['SERVER_NAME']]['namespace'] . DS . VIEW . DS . $controlador . DS . $view . EXTENSAO_VIEW;
+		$pathView = DIR . DS . SUBDOMINIO . DS . VIEW . DS . $controlador . DS . $view . EXTENSAO_VIEW;
 		return self::comprimeHTML(file_exists($pathView) ? file_get_contents($pathView) : '');
 	}
 
 	public function getLayout($layout = 'Layout'){
-		$pathView = DIR . DS . $this->Router->sites[$_SERVER['SERVER_NAME']]['namespace'] . DS . VIEW . DS . LAYOUT . DS . $layout . EXTENSAO_VIEW;
+		$pathView = DIR . DS . SUBDOMINIO . DS . VIEW . DS . LAYOUT . DS . $layout . EXTENSAO_VIEW;
 		return file_exists($pathView) ? file_get_contents($pathView) : '';
 	}
 

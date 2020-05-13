@@ -82,18 +82,25 @@ var gulp = require('gulp'),
 	argv	 = require('yargs').argv,
 	sourcemaps = require('gulp-sourcemaps');
 
-var package = fs.readFileSync('package.json', 'utf8');
-
-const sitejson = fs.readFileSync('../Model/Sites/Sites.json', 'utf8');
-
 var listaArquivosSiteJS = [];
 
-sites = JSON.parse(sitejson);
+sites = {
+"tibiabook.local":{
+		"dominio":"tibiabook.local",
+		"nome":"Tibiabook",
+		"namespace":"tibiabook",
+		"status":1,
+		"statics":"\/\/statics.tibiabook.local",
+		"link": "http://tibiabook.local:80/",
+		"www": "../tibiabook/www/"
+	}
+};
 /**
 ** FUNÇÕES
 **/	
 
 gulp.task('dev_js', function(cb){
+
   // Função compila o dev.JS com Map para Debugar
   return gulp.src(sites[site].www + 'js/js/dev/dev.js')
     .pipe(sourcemaps.init())

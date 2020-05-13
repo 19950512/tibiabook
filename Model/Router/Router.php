@@ -3,9 +3,8 @@
 namespace Model\Router;
 
 use Model\Core\De AS de;
-use Model\Sites\Sites;
 
-class Router extends Sites {
+class Router {
 
 	public $controller = 'Index';
 	public $action = 'index';
@@ -22,15 +21,12 @@ class Router extends Sites {
 	public function __construct()
 	{
 
-		parent::__construct();
-
-
 		if(isset($_SERVER['REQUEST_URI']) and !empty($_SERVER['REQUEST_URI'])){
 
 			$temp = [];
 			$server_name = $_SERVER['SERVER_NAME'] ?? '';
 
-			$this->namespace = $this->sites[$server_name]['namespace'].'\\'.$this->namespace;
+			$this->namespace = SUBDOMINIO;
 
 			$url = $this->parseURL($_SERVER['REQUEST_URI']);
 
@@ -53,18 +49,21 @@ class Router extends Sites {
 
 			// Atualiza a URL
 			$this->setUrl($_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
-			$controller = ucwords(strtolower($url[1] ?? ''));
+			$controller = ucwords(strtolower($url[1] ?? 'Index'));
 			$action = strtolower($url[2] ?? '');
 			$param = strtolower($url[3] ?? '');
 
-			$pathSiteProjeto = DIR . DS . $this->sites[$server_name]['namespace'] . DS;
+			$pathSiteProjeto = DIR . DS . SUBDOMINIO . DS;
+
 			$this->file_controller = $pathSiteProjeto . CONTROLLER . DS . $controller . DS . 'Index/Index.php';
 
 			// If controller !== ''
 			if(!empty($controller)) {
 
+
 				$this->setValues($controller);
 				$fileController = $pathSiteProjeto. 'Controller' . DS . $controller . DS . $controller . '.php';
+				
 
 				// If not exists Controller || not exists action/method = Erro404
 				if(!class_exists($this->namespace) OR !is_file($fileController)){
@@ -122,7 +121,7 @@ class Router extends Sites {
 	 */
 	public function setNamespace($namespace)
 	{  
-		$pathSiteProjeto = str_replace('/', '\\', $this->sites[$_SERVER['SERVER_NAME']]['namespace'] . DS);
+		$pathSiteProjeto = str_replace('/', '\\', SUBDOMINIO . DS);
 		$this->namespace = $pathSiteProjeto.'Controller\\'.$namespace;
 		return $this;
 	}

@@ -1,2 +1,0 @@
-Options -Indexes
-ErrorDocument 403 http://%{HTTP_HOST}/pagina-nao-encontrada

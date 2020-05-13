@@ -12,6 +12,7 @@ define( 'VIEW', 'View' );
 define( 'LAYOUT', 'Layout' );
 define( 'EXTENSAO_VIEW', '.html' );
 define( 'PATH_SITES', 'Sites' );
+define( 'SUBDOMINIO', 'tibiabook' );
 
 
 /* CONFIGURAÇÕES DO SITE */
@@ -21,8 +22,9 @@ define( 'SESSION_VISITANTE', 'VISITANTE' );
 define( 'SESSION_TOKEN', 'TOKEN' );
 
 define( 'SITE_PROTOCOLO', 'http://' );
-define( 'SITE_DOMINIO', 'dosamigosmetalurgica.local' );
-define( 'SITE_NOME', 'Dos Amigos Metalurgica' );
+define( 'SITE_DOMINIO', 'tibiabook.local' );
+define( 'SITE_NOME', 'Tibiabook' );
+define( 'SITE_STATICS', 'statics.tibiabook.local' );
 
 
 
@@ -36,7 +38,7 @@ define( 'LANGUAGES' , [
 ]);
 
 /* AUTHOR - DEVELOPER */
-define ( 'AUTHOR', 'DevNux' );
+define ( 'AUTHOR', 'Matheus Maydana' );
 
 
 /* DB - arquivo Db.php 
@@ -50,8 +52,6 @@ define ( 'AUTHOR', 'DevNux' );
 	define( 'API_KEY', 'SUA_API_KEY' );
 */
 require_once 'Db.php';
-
-
 
 /* Config.php - arquivo de configurações
 

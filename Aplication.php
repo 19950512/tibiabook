@@ -2,7 +2,6 @@
 
 use Model\Router\Router AS Router;
 use Model\Core\De AS de;
-use Model\Sessions; 
 
 class Aplication {
 
@@ -11,9 +10,6 @@ class Aplication {
 	function __construct(){
 
 		$this->router = new Router();
-
-		// Inicia a session
-		$sessions = new Sessions($_SERVER['SERVER_NAME']);
 
 		// Inicia o controlador
 		$controller = new $this->router->namespace();
