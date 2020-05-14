@@ -106,17 +106,17 @@
 
 	window.logout = async btn => {
 
-		var login = dev.ajax('/Tvvisitante/logout', {
+		var login = dev.ajax('/login/logout', {
 		});
 
 		login.then(res => {
 
-			var cor = (res.r == 'ok') ? 'blue' : 'red';
+			var cor = (res.res == 'ok') ? 'blue' : 'red';
 
 			dev.mensagem(res.data, cor);
 
-			if(res.r == 'ok'){
-				window.location.href = '/Tvvisitante';
+			if(res.res == 'ok'){
+				window.location.href = '/';
 			}
 
 		}).catch(res => {

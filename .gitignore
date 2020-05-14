@@ -4,12 +4,15 @@ www/package-lock.json
 www/node_modules*/
 Sessions/*
 
-dosamigosmetalurgica/www/js/site/map/*
-dosamigosmetalurgica/www/js/dev/map/*
-dosamigosmetalurgica/www/js/map/*
+tibiabook/www/package-lock.json
+tibiabook/www/node_modules*/
 
-dosamigosmetalurgica/www/css/icons/map/*
-dosamigosmetalurgica/www/css/map/*
+tibiabook/www/js/site/map/*
+tibiabook/www/js/dev/map/*
+tibiabook/www/js/map/*
+
+tibiabook/www/css/icons/map/*
+tibiabook/www/css/map/*
 
 controle/www/js/site/map/*
 controle/www/js/dev/map/*
@@ -20,5 +23,5 @@ controle/www/css/map/*
 
 
 
-dosamigosmetalurgica/www/img/visitante/*
+tibiabook/www/img/visitante/*
 controle/www/img/visitante/*

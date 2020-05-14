@@ -1,0 +1,50 @@
+<section class="content content_v content_h content_m">
+	<div class="max35 margin-auto">
+		<h1 class="text-center">Criar Conta</h1>
+		<div class="site-space-2"></div>
+
+		<input type="hidden" id="tokenAuth" value="{{token}}">
+
+		<p>
+			<h4 class="formulario-titulo">E-MAIL</h4>
+			<input class="formsimple-input width-100" type="email" id="co_email" placeholder="Seu E-mail" />
+		</p>
+
+		<p>
+			<h4 class="formulario-titulo">SENHA</h4>
+			<input class="formsimple-input width-100" type="password" id="co_senha" placeholder="Sua Senha" />
+		</p>
+
+		<p>
+			<button class="b b-primary width-100" onclick="login_criar(this)">Criar Conta</button>
+		</p>
+
+		<p class="text-center">
+			<a href="/login">Já tenho uma conta</a>
+		</p>
+	</div>
+</section>
+
+
+<script>
+	window.login_criar = async btn => {
+		
+		var criar = dev.ajax('/login/create', {
+			co_email: co_email.value,
+			co_senha: co_senha.value,
+			tokenAuth: tokenAuth.value
+		});
+
+		criar.then(res => {
+
+			dev.mensagem(res.data);
+
+			if(res.res == 'ok'){
+				window.location.href = '/';
+			}
+
+		}).catch(res => {
+			console.error("Ops, algo de errado não deu certo.", res);
+		});
+	};
+</script>

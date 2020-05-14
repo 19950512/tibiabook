@@ -4,6 +4,7 @@ namespace tibiabook\Controller;
 
 use Model\Core\View as View;
 use Model\Core\De as de;
+use Model\Sessions;
 use Model\Visitante\Visitante;
 
 class Controller {
@@ -14,9 +15,12 @@ class Controller {
 	/* Name any action */
 	public $viewName;
 
+	/*  */
 	public $pushHistory = false;
 
 	public function __construct(){
+
+		$sessions = new Sessions;
 
 		if(isset($_POST['push']) and $_POST['push'] === 'push'){
 			$this->pushHistory = true;

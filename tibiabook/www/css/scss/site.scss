@@ -253,6 +253,14 @@ p{
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.bg-accent{
+	display: table;
+	width: 100%;
+	background-color: $colorAccent;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .box-lateral {
 	margin-left: -30px;
 	margin-right: -30px;

@@ -4,6 +4,7 @@ namespace tibiabook\Controller\Index;
 
 use tibiabook\Controller\Controller;
 use Model\Core\View as View;
+use Model\Core\De as de;
 
 class Index extends Controller {
 

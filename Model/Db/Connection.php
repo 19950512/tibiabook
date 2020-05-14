@@ -17,9 +17,9 @@ class Connection {
         try {
 
            if(!isset(self::$instance)){
-                $db_name = $_SESSION[SESSION_LOGIN]['db_name'] ?? '';
 
-                self::$instance = new PDO('pgsql:host = ' . DB_HOST . ' dbname = ' . $db_name . ' user = ' . DB_USER . ' password = ' . DB_PASSWORD . ' port =' . DB_PORT);
+                self::$instance = new PDO('pgsql:host = ' . DB_HOST . ' dbname = ' . DB_NAME . ' user = ' . DB_USER . ' password = ' . DB_PASSWORD . ' port =' . DB_PORT);
+
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
 

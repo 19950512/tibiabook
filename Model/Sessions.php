@@ -2,9 +2,11 @@
 
 namespace Model;
 
+use Model\Core\De AS de;
+
 class Sessions {
 	
-	public function __construct($dominio){
+	public function __construct($dominio = 'tibiabook.local'){
 
 		session_save_path(DIR.'/Sessions/');
 		session_set_cookie_params(99999999, '/', $dominio);
